@@ -6,7 +6,7 @@
 	export let blogPost: BlogPost;
 </script>
 
-<a href={`/blog/${blogPost.slug.current}`}>
+<a href={`/${blogPost.slug.current}`}>
 	<Card.Root class="hover:bg-slate-100 hover:dark:bg-slate-800">
 		<Card.Header>
 			<Card.Title>{blogPost.title}</Card.Title>
