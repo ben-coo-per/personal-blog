@@ -14,7 +14,7 @@
 
 <div class="border-b bg-slate-100 py-16 dark:bg-slate-800">
 	<div class="container mx-auto max-w-5xl">
-		<div class="flex items-start justify-between">
+		<div class="flex flex-col items-start justify-between gap-4 sm:flex-row">
 			<div>
 				<Breadcrumb.Root class="mb-6">
 					<Breadcrumb.List>
@@ -34,12 +34,12 @@
 				{#if data.blogPost.time_spent}
 					<Card.Root>
 						<Card.Header class="flex flex-row items-center justify-between space-y-0 pb-2">
-							<Card.Title class="text-sm font-medium">Time spent</Card.Title>
+							<Card.Title class="whitespace-nowrap text-sm font-medium">Time spent</Card.Title>
 						</Card.Header>
 						<Card.Content>
-							<div class="p-1 text-2xl font-bold">
+							<div class="whitespace-nowrap p-1 text-xl font-bold sm:text-2xl">
 								~ {data.blogPost.time_spent}
-								<span class="text-muted-foreground text-xs">hours</span>
+								<span class="text-muted-foreground text-xs">hrs</span>
 							</div>
 						</Card.Content>
 					</Card.Root>
