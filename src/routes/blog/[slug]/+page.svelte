@@ -12,7 +12,7 @@
 	export let data: PageData;
 </script>
 
-<div class="border-b bg-slate-100 py-10 dark:bg-slate-800">
+<div class="border-b bg-slate-100 py-16 dark:bg-slate-800">
 	<div class="container mx-auto max-w-5xl">
 		<div class="flex items-start justify-between">
 			<div>
@@ -61,6 +61,6 @@
 		</div>
 	</div>
 </div>
-<div class="prose prose-slate dark:prose-invert container mx-auto max-w-5xl pt-4">
+<div class="prose prose-slate dark:prose-invert container mx-auto max-w-5xl pb-72 pt-8">
 	{@html toHTML(data.blogPost.body)}
 </div>
