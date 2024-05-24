@@ -6,11 +6,11 @@
 	export let data: PageData;
 </script>
 
-<Header>Ben Cooper Blog</Header>
-<div class=" container mx-auto grid gap-4 p-2 md:grid-cols-2">
+<Header>
+	<h3 class="font-mono text-xl">bcLOG</h3>
+</Header>
+<div class="container mx-auto grid gap-4 pt-10 md:grid-cols-2">
 	{#each data.blogPosts as blogPost}
-		<BlogPostCard {blogPost}></BlogPostCard>
-		<BlogPostCard {blogPost}></BlogPostCard>
 		<BlogPostCard {blogPost}></BlogPostCard>
 	{/each}
 </div>
