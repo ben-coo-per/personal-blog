@@ -20,7 +20,7 @@ export const client = createClient({
 
 export async function getList(): Promise<BlogPost[]> {
 	return await client.fetch(
-		groq`*[_type == "blogPost" && released == true] | order(_createdAt desc) { title, slug, mainImage, excerpt, _createdAt }`
+		groq`*[_type == "blogPost"] | order(_createdAt desc) { title, slug, mainImage, excerpt, _createdAt }`
 	);
 }
 
