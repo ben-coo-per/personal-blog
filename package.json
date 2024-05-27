@@ -36,8 +36,6 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@portabletext/to-html": "^2.0.13",
-		"@portabletext/types": "^2.0.13",
 		"@sanity/client": "^6.18.2",
 		"@sanity/image-url": "^1.0.2",
 		"@sanity/types": "^3.43.0",
@@ -47,6 +45,7 @@
 		"groq": "^3.43.0",
 		"lucide-svelte": "^0.379.0",
 		"mode-watcher": "^0.3.0",
+		"svelte-markdown": "^0.4.1",
 		"tailwind-merge": "^2.3.0",
 		"tailwind-variants": "^0.2.1"
 	}

@@ -1,8 +1,7 @@
 <script lang="ts">
 	import type { PageData } from './$types';
-	import Header from '$lib/components/ui/header.svelte';
 	import * as Breadcrumb from '$lib/components/ui/breadcrumb';
-	import { toHTML } from '@portabletext/to-html';
+	import SvelteMarkdown from 'svelte-markdown';
 	import { formatDate } from '$lib/sanity-utils';
 	import { LucideGithub } from 'lucide-svelte';
 
@@ -62,5 +61,5 @@
 	</div>
 </div>
 <div class="prose prose-slate dark:prose-invert container mx-auto max-w-5xl pb-72 pt-8">
-	{@html toHTML(data.blogPost.body)}
+	<SvelteMarkdown source={data.blogPost.bodymd} />
 </div>

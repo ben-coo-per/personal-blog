@@ -1,7 +1,6 @@
 import { createClient } from '@sanity/client';
 import type { Slug } from '@sanity/types';
 import groq from 'groq';
-import type { PortableTextBlock } from '@portabletext/types';
 
 import { PUBLIC_SANITY_DATASET, PUBLIC_SANITY_PROJECT_ID } from '$env/static/public';
 
@@ -35,7 +34,7 @@ export interface BlogPost {
 	_createdAt: string;
 	title: string;
 	slug: Slug;
-	body: PortableTextBlock[];
+	bodymd: string;
 	excerpt: string;
 	github_link: string;
 	time_spent: number;
