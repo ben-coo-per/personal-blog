@@ -4,6 +4,7 @@
 	import SvelteMarkdown from 'svelte-markdown';
 	import { formatDate } from '$lib/sanity-utils';
 	import { LucideGithub } from 'lucide-svelte';
+	import Image from '$lib/components/markdown/image.svelte';
 
 	import Button from '$lib/components/ui/button/button.svelte';
 	import * as Card from '$lib/components/ui/card';
@@ -38,7 +39,7 @@
 						<Card.Content>
 							<div class="whitespace-nowrap p-1 text-xl font-bold sm:text-2xl">
 								~ {data.blogPost.time_spent}
-								<span class="text-muted-foreground text-xs">hrs</span>
+								<span class="text-xs text-muted-foreground">hrs</span>
 							</div>
 						</Card.Content>
 					</Card.Root>
@@ -60,6 +61,6 @@
 		</div>
 	</div>
 </div>
-<div class="prose prose-slate dark:prose-invert container mx-auto max-w-5xl pb-72 pt-8">
-	<SvelteMarkdown source={data.blogPost.bodymd} />
+<div class="container prose prose-slate mx-auto max-w-5xl pb-72 pt-8 dark:prose-invert">
+	<SvelteMarkdown source={data.blogPost.bodymd} renderers={{ image: Image }} />
 </div>
