@@ -3,7 +3,7 @@
 	import * as Breadcrumb from '$lib/components/ui/breadcrumb';
 	import SvelteMarkdown from 'svelte-markdown';
 	import { formatDate } from '$lib/sanity-utils';
-	import { LucideGithub } from 'lucide-svelte';
+	import { LucideGithub, LucideInstagram } from 'lucide-svelte';
 	import Image from '$lib/components/markdown/image.svelte';
 
 	import Button from '$lib/components/ui/button/button.svelte';
@@ -38,22 +38,43 @@
 						</Card.Header>
 						<Card.Content>
 							<div class="whitespace-nowrap p-1 text-xl font-bold sm:text-2xl">
-								~ {data.blogPost.time_spent}
-								<span class="text-xs text-muted-foreground">hrs</span>
+								<span
+									class={data.blogPost.time_spent > 7
+										? 'text-red-600 dark:text-red-300'
+										: 'text-inherit'}
+								>
+									{data.blogPost.time_spent}
+								</span>
+								<span class="text-muted-foreground text-xs">hrs</span>
 							</div>
 						</Card.Content>
 					</Card.Root>
 				{/if}
-				{#if data.blogPost.github_link}
+				{#if data.blogPost.github_link || data.blogPost.instagram_link}
 					<Card.Root>
-						<Card.Header class="flex flex-row items-center justify-between space-y-0 pb-2">
-							<Card.Title class="text-sm font-medium">Link to project</Card.Title>
-						</Card.Header>
-						<Card.Content>
-							<Button class="mt-1" href={data.blogPost.github_link} target="_blank" variant="ghost">
-								<LucideGithub class="mr-2 h-4 w-4" />
-								View on GitHub
-							</Button>
+						<Card.Content class="flex h-full flex-col justify-center pb-0">
+							{#if data.blogPost.github_link}
+								<Button
+									class="mt-1"
+									href={data.blogPost.github_link}
+									target="_blank"
+									variant="ghost"
+								>
+									<LucideGithub class="mr-2 h-4 w-4" />
+									View on GitHub
+								</Button>
+							{/if}
+							{#if data.blogPost.instagram_link}
+								<Button
+									class="mt-1"
+									href={data.blogPost.instagram_link}
+									target="_blank"
+									variant="ghost"
+								>
+									<LucideInstagram class="mr-2 h-4 w-4" />
+									View on Instagram
+								</Button>
+							{/if}
 						</Card.Content>
 					</Card.Root>
 				{/if}
@@ -61,6 +82,6 @@
 		</div>
 	</div>
 </div>
-<div class="container prose prose-slate mx-auto max-w-5xl pb-72 pt-8 dark:prose-invert">
+<div class="prose prose-slate dark:prose-invert container mx-auto max-w-5xl pb-72 pt-8">
 	<SvelteMarkdown source={data.blogPost.bodymd} renderers={{ image: Image }} />
 </div>

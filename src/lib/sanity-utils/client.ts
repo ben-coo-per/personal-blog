@@ -36,7 +36,8 @@ export interface BlogPost {
 	slug: Slug;
 	bodymd: string;
 	excerpt: string;
-	github_link: string;
+	github_link?: string;
+	instagram_link?: string;
 	time_spent: number;
 	publishedAt: string;
 }
