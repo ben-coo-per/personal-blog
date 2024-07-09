@@ -7,7 +7,7 @@
 </script>
 
 <a href={`/${blogPost.slug.current}`}>
-	<Card.Root class="hover:bg-slate-100 hover:dark:bg-slate-800">
+	<Card.Root class="h-full hover:bg-slate-100 hover:dark:bg-slate-800">
 		<Card.Header>
 			<Card.Title>{blogPost.title}</Card.Title>
 			<Card.Description>{formatDate(blogPost.publishedAt)}</Card.Description>
