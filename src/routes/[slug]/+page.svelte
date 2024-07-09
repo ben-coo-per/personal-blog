@@ -37,7 +37,7 @@
 							<Card.Title class="whitespace-nowrap text-sm font-medium">Time spent</Card.Title>
 						</Card.Header>
 						<Card.Content>
-							<div class="whitespace-nowrap p-1 text-xl font-bold sm:text-2xl">
+							<div class="whitespace-nowrap px-3 py-1 text-xl font-bold sm:text-2xl">
 								<span
 									class={data.blogPost.time_spent > 7
 										? 'text-red-600 dark:text-red-300'
@@ -45,7 +45,7 @@
 								>
 									{data.blogPost.time_spent}
 								</span>
-								<span class="text-muted-foreground text-xs">hrs</span>
+								<span class="text-xs text-muted-foreground">hrs</span>
 							</div>
 						</Card.Content>
 					</Card.Root>
@@ -82,6 +82,6 @@
 		</div>
 	</div>
 </div>
-<div class="prose prose-slate dark:prose-invert container mx-auto max-w-5xl pb-72 pt-8">
+<div class="container prose prose-slate mx-auto max-w-5xl pb-72 pt-8 dark:prose-invert">
 	<SvelteMarkdown source={data.blogPost.bodymd} renderers={{ image: Image }} />
 </div>
