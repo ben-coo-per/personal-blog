@@ -29,6 +29,15 @@ export async function getBlogPostDetail(slug: string): Promise<BlogPost> {
 	});
 }
 
+export async function getDownloadUrl(slug: string): Promise<{ url: string; title: string }> {
+	return await client.fetch<{ url: string; title: string }>(
+		groq`*[_type == "blogPost" && slug.current == $slug][0] { "url": downloadable_file.asset->url, "title": downloadable_file.asset->originalFilename }`,
+		{
+			slug
+		}
+	);
+}
+
 export interface BlogPost {
 	_type: 'blogPost';
 	_createdAt: string;
@@ -38,6 +47,14 @@ export interface BlogPost {
 	excerpt: string;
 	github_link?: string;
 	instagram_link?: string;
+	onshape_link?: string;
 	time_spent: number;
 	publishedAt: string;
+	downloadable_file?: {
+		_type: 'file';
+		asset: {
+			_ref: string;
+			_type: 'reference';
+		};
+	};
 }
